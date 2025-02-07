@@ -19,15 +19,15 @@ int main(void) {
 	pwm_set_wrap(slice, wrap);
 	pwm_set_enabled(slice, true);
 
-	// (2) duty cycle de 0.12% para 180°, durante 5s
+	// (2) duty cycle de 12% para 180°, durante 5s
 	pwm_set_gpio_level(SERVO_PWM_PIN, (uint32_t)(wrap * 0.12f));
 	sleep_ms(5000);
 
-	// (3) duty cycle de 0.0735% para 90°, durante 5s
+	// (3) duty cycle de 7.35% para 90°, durante 5s
 	pwm_set_gpio_level(SERVO_PWM_PIN, (uint32_t)(wrap * 0.0735f));
 	sleep_ms(5000);
 
-	// (4) duty cycle de 0.025% para 0°, durante 5s
+	// (4) duty cycle de 2.5% para 0°, durante 5s
 	pwm_set_gpio_level(SERVO_PWM_PIN, (uint32_t)(wrap * 0.025f));
 	sleep_ms(5000);
 
