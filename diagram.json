@@ -6,14 +6,18 @@
     {
       "type": "board-pi-pico-w",
       "id": "pico",
-      "top": -60.85,
-      "left": -236.45,
+      "top": -99.25,
+      "left": -438.05,
       "attrs": { "builder": "pico-sdk" }
     },
+    { "type": "wokwi-servo", "id": "servo1", "top": -107.6, "left": -307.2, "attrs": {} }
   ],
   "connections": [
     [ "pico:GP0", "$serialMonitor:RX", "", [] ],
     [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pico:3V3", "servo1:V+", "red", [ "h0" ] ],
+    [ "pico:GP22", "servo1:PWM", "blue", [ "h48.31", "v-57.6" ] ],
+    [ "pico:GND.8", "servo1:GND", "black", [ "h48.31", "v9.6" ] ]
   ],
   "dependencies": {}
 }
