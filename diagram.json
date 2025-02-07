@@ -10,14 +10,17 @@
       "left": -438.05,
       "attrs": { "builder": "pico-sdk" }
     },
-    { "type": "wokwi-servo", "id": "servo1", "top": -107.6, "left": -307.2, "attrs": {} }
+    { "type": "wokwi-servo", "id": "servo1", "top": -107.6, "left": -307.2, "attrs": {} },
+    { "type": "wokwi-logic-analyzer", "id": "logic1", "top": 67.55, "left": -259.2, "attrs": {} }
   ],
   "connections": [
     [ "pico:GP0", "$serialMonitor:RX", "", [] ],
     [ "pico:GP1", "$serialMonitor:TX", "", [] ],
     [ "pico:3V3", "servo1:V+", "red", [ "h0" ] ],
     [ "pico:GP22", "servo1:PWM", "blue", [ "h48.31", "v-57.6" ] ],
-    [ "pico:GND.8", "servo1:GND", "black", [ "h48.31", "v9.6" ] ]
+    [ "pico:GND.8", "servo1:GND", "black", [ "h48.31", "v9.6" ] ],
+    [ "logic1:GND", "pico:GND.6", "black", [ "h-86.4", "v-124.8" ] ],
+    [ "logic1:D0", "servo1:PWM", "green", [ "h0" ] ]
   ],
   "dependencies": {}
 }
